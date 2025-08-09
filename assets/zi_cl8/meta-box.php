@@ -1,0 +1,52 @@
+<?php 
+	add_action( 'cmb2_admin_init', 'zia_cl_8' );
+	function zia_cl_8(){
+		$first_option =new_cmb2_box( array(
+				'title' => 'first_exmple_metabox ',
+				'id' => 'zi_show_8',
+				'object_types' => array('eight')
+			
+			)
+			);
+			
+			$first_option-> add_field(array(
+				'name'   => 'ছাত্র ছাত্রীর নাম',
+				'id'     => 'name',
+				'type'   => 'text',
+				
+			
+			
+			)
+);
+			$first_option-> add_field(array(
+				'name'   => 'ছত্র ছাত্রীর রোল ',
+				'id'     => 'roll',
+				'type'   => 'text',
+				
+			
+			
+			));
+			$first_option-> add_field(array(
+				'name'   => 'সেশন ',
+				'id'     => 'year',
+				'type'   => 'text',
+				
+			
+			
+			));
+			$first_option-> add_field(array(
+				'name'   => 'শ্রেণী ',
+				'id'     => 'class',
+				'type'   => 'text',
+				
+			
+			
+			));
+			
+			
+		
+	}
+
+
+
+ ?>
