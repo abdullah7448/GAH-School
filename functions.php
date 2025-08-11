@@ -1,4 +1,5 @@
 <?php
+
 function gahs_support_include() {
     load_theme_textdomain( "gahs" );
     add_theme_support( "post-thumbnails" );
@@ -23,9 +24,8 @@ function gahs_style_and_script() {
 
 
     // Bootstrap CSS
-   // wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css');
     wp_enqueue_style('font-awesome','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',[],'6.5.2');
-
+    wp_enqueue_style("jquery-css", get_template_directory_uri() . "/assets/css/jquery.fancybox.css", array(), "0.0.1");
     wp_enqueue_style("marque", get_template_directory_uri() . "/assets/css/marquee.css", array(), "0.0.1");
     wp_enqueue_style("mmenu-light", get_template_directory_uri() . "/assets/css/bootstrap.css", array(), "0.0.1");
 	//wp_enqueue_style("font-awesome", get_template_directory_uri() . "/assets/css/font-awesome.css", array(), "0.0.1");
@@ -37,7 +37,7 @@ function gahs_style_and_script() {
 
 
     	// Enqueue jQuery (WordPress includes it)
-    wp_enqueue_script('jquery');
+    //wp_enqueue_script('jquery');
 
     // Bootstrap JS
     //wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js', array('jquery'), '3.4.1', true);
@@ -45,8 +45,9 @@ function gahs_style_and_script() {
     //wp_enqueue_script("slick-slider", get_template_directory_uri()."/assets/js/slick.min.js", array("jquery"), "0.0.1", true);
     //wp_enqueue_script("mmenu-light", get_template_directory_uri()."/assets/js/mmenu-light.js", array(), "0.0.1", true);
     //wp_enqueue_script("bootstrap-bundle", get_template_directory_uri()."/assets/js/bootstrap.bundle.min.js", array(), "0.0.1", true);
-    wp_enqueue_script("bootstrap-min", get_template_directory_uri()."/assets/js/bootstrap.min.js", array(), "0.0.1", true);
     wp_enqueue_script("jquery-asset", get_template_directory_uri()."/assets/js/jquery.js", array(), "0.0.1", true);
+    wp_enqueue_script("bootstrap-min", get_template_directory_uri()."/assets/js/bootstrap.min.js", array(), "0.0.1", true);
+
     wp_enqueue_script("gallery-js", get_template_directory_uri()."/assets/js/gallary.js", array(), "0.0.1", true);
     wp_enqueue_script("gahs-main", get_template_directory_uri()."/assets/js/main.js", array("jquery"), "0.0.1", true);
 
@@ -119,6 +120,16 @@ function gahs_default_functions(){
     'supports' => array('title', 'editor','thumbnail'),
     'has_archive' => true, // This enables archive URL
     ));
+    // register_post_type('former',array(
+    //     'labels' => array(
+    //         'name' => 'প্রাক্তন ছাত্রছাত্রী তালিকা','add_new_item' =>'প্রাক্তন ছাত্রছাত্রীর ফিল্ড পুরুন করুন'
+    //     ),
+    //     'public' =>true,
+    //     'supports' => array('thumbnail','title'),
+    //     'has_archive' => true
+    // )
+    
+    // );
     // footer_dynamic
     // register_post_type('f_1st_blog',array(
     // 'labels' => array(
@@ -177,7 +188,8 @@ function gahs_default_functions(){
         ),
         
         'public' =>true,
-        'supports' => array('title')
+        'supports' => array('title'),
+        'has_archive' => true
     )
     
     );
@@ -188,7 +200,8 @@ function gahs_default_functions(){
         ),
         
         'public' =>true,
-        'supports' => array('title')
+        'supports' => array('title'),
+        'has_archive' => true
     )
     
     );

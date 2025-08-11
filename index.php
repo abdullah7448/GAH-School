@@ -4,4 +4,4 @@
     <h3 style="text-align:center">Comming Soon </h3>
 </div>
 
-<?php get_footer();?>
+<?php get_footer();?> 

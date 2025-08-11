@@ -38,13 +38,27 @@
             </div>
             <div class="col-md-3 footer-link">
                 <address class="address" style="overflow:hidden">
-					
-                   <h2> গিলাবাড়ী আদর্শ উচ্চ বিদ্যালয়</h2>
-                   <a style="display:block" href="<?php echo site_url(); ?>"><img src="<?php $_logo = get_field('fooer_logo', 'options');  echo esc_url($_logo['url']); ?>" alt="logo" width="120px"></a>
-                     <p><?php echo get_field('f_address','options') ?></p>
-					     <abbr>Phone : </abbr> <a href="tel:01713724952"><?php echo get_field('f_phone', 'options') ?></a><br>
-                      <abbr>Email : </abbr> <a href="mailto:gahsedubd@gmail.com"><?php echo get_field('f_email', 'options') ?></a>
-                      
+                <h2> গিলাবাড়ী আদর্শ উচ্চ বিদ্যালয়</h2>
+					<?php
+                  $_logo = get_field('fooer_logo', 'options'); 
+                  $_phone =get_field('f_phone', 'options');
+                  $_email= get_field('f_email', 'options');
+                  $_address= get_field('f_address','options') ;
+               if($_logo){
+                  echo '<a style="display:block" href="' . esc_url( site_url() ) . '">
+                  <img src="' . esc_url( $_logo['url'] ) . '" alt="logo" width="120px">
+                  </a>';
+               }
+               if($_address){
+                  echo '<p>' . esc_html( $_address ) . '</p>';
+               }
+               if($_phone){
+                  echo '<abbr>Phone : </abbr> <a href="tel:' . esc_attr( $_phone ) . '">' . esc_html( $_phone ) . '</a><br>';
+               }
+               if($_email){
+                  echo '<abbr>Email : </abbr> <a href="mailto:' . esc_attr( $_email ) . '">' . esc_html( $_email ) . '</a>';
+               }
+               ?>   
                </address>
             </div>
         </div>
@@ -60,7 +74,7 @@
 				</div>
 			</div>
 			<div class="col-xs-6">
-				<div class="ft_right"><p class="text-right">Developed By <a href="http://dusrasoft.com/" target="_blank">DUSRA Soft</a></p></div>
+				<div class="ft_right"><p class="text-right">Developed By <a href="https://dusrasoft.com/" target="_blank">DUSRA Soft Ltd.</a></p></div>
 			</div>
 		</div>
 	</div>

@@ -94,9 +94,6 @@ p{
 	border-radius: 0px;
 }
 
-#main-nav {
-
-}
 .navbar-default {
 	background-color: #000;
 	border-color: transparent;
@@ -205,8 +202,7 @@ p{
     border-bottom:35px solid #EA223C;
     border-top: 0px solid transparent;
     border-right:15px solid transparent;
-} 
-.picture_Kumati{}
+}
 .picture_Kumati img{ width:100%;max-width:248px;height:248px; float:left;margin-right:10px;}
 
 
@@ -811,7 +807,7 @@ padding:20px 15px;
 
 }
 .notic_detels span{
-   font-sizt:12px;
+   font-size:12px;
    color:#000;
    
 }

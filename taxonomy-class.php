@@ -46,13 +46,13 @@
                     $student_gender= get_field('s_gender');
                     $student_session= get_field('s_session');
 
-                    if($student_name || $student_roll || $student_section || $student_gender || $student_session){
+                    //if($student_name || $student_roll || $student_section || $student_gender || $student_session){
                         echo ' <h3>নাম :' .$student_name .'</h3>';
                         echo '  <p>রোল :' .$student_roll. '</p>';
-                        echo '  <p>রোল :' . $student_section. '</p>';
-                        echo '  <p>রোল :' .$student_gender. '</p>';
-                        echo '  <p>রোল :' .$student_session. '</p>';
-                    }
+                        echo '  <p>সেকশন :' . $student_section. '</p>';
+                        echo '  <p>লিঙ্গ :' .$student_gender. '</p>';
+                        echo '  <p>সেশন :' .$student_session. '</p>';
+                   // }
 
                     // if($stdent_name ){
                     //     echo ' <h3>নাম :' .$student_name .'</h3>';

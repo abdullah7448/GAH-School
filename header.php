@@ -7,6 +7,7 @@
 <meta name="description" content="<?php bloginfo('description');?>">
 <meta name="author" content="www.dusrasoft.com">
 <?php wp_head();?>
+
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -22,11 +23,19 @@
       <div class="header-content-left "> 
       <?php
       $logo = get_field('site_logo', 'options'); 
+      $school_name=get_field('logo_title1', 'options');
+      $school_address=get_field('logo_title2', 'options') ;
+      if($logo){
+        echo '<a href="' . site_url() . '"><img src="' . esc_url($logo['url']) . '" alt="logo" width="120px"></a>';
+
+      }
+
+      if($school_name || $school_address){
+        echo '<h2>'.$school_name.'</h2>';
+        echo '<h3>'.$school_address.'</h3>';
+      }
 
       ?>
-		<a href="<?php echo site_url(); ?>"><img src="<?php echo esc_url($logo['url']); ?>" alt="logo" width="120px"></a>
-        <h2><?php echo get_field('logo_title1', 'options') ?></h2>
-        <h3><?php echo get_field('logo_title2', 'options') ?></h3>
 			<div class="clr"></div>
       </div>
     </div>
@@ -40,10 +49,12 @@
         <?php while (have_rows('social_field', 'options')): the_row(); 
             $icon = get_sub_field('social_icon');
             $link = get_sub_field('social_link'); 
+
+            if($icon && $link){
+              echo   '<a href="'. esc_url($link). '" target="_blank" rel="noopener"> '.$icon.'</a>';
+            }
             ?>
-                    <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
-                        <?php echo $icon?>
-                    </a>
+                  
         <?php endwhile; ?>
 
 			</div>

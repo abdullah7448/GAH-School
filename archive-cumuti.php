@@ -1,9 +1,5 @@
 <?php get_header(); ?>
-<?php  
-	/*
-		Template Name:cumuti
-	*/
-	?>
+
 <section id="main-content">
   <div class="container">
     <div class="row">
@@ -29,10 +25,17 @@
 				<div class="col-md-3 col-sm-6">
 				
 					<div class="img_gelary">
-						<?php  the_post_thumbnail(); ?>
-						  <h3><?php echo get_post_meta(get_the_ID($zia->ID),'cum_name', true); ?></h3>
-						 <p><?php echo get_post_meta(get_the_ID($zia->ID),'Sum_Surname', true); ?></p>
-						 <p><?php echo get_post_meta(get_the_ID($zia->ID),'cum_mob', true); ?></p>
+						<?php  
+						 if ( has_post_thumbnail() ) {
+							the_post_thumbnail('full'); // or use a size like 'thumbnail', 'medium', etc.
+						} else {
+							// URL to your placeholder image
+						   $placeholder_url = get_template_directory_uri() . '/assets/img/place-holder-image.png'; 
+						   echo '<img src="' . esc_url($placeholder_url) . '" alt="Placeholder Image" />';
+						} ?>
+						  <h3>নাম: <?php echo get_post_meta(get_the_ID($zia->ID),'cum_name', true); ?></h3>
+						 <p>পদবি: <?php echo get_post_meta(get_the_ID($zia->ID),'Sum_Surname', true); ?></p>
+						 <p>মোবা: <?php echo get_post_meta(get_the_ID($zia->ID),'cum_mob', true); ?></p>
 					</div>
 				</div>
 				<?php endwhile; ?>	

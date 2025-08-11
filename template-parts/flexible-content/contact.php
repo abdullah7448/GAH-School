@@ -1,15 +1,3 @@
-<?php
-if ($args["j"]) {
-    $j = $args["j"];
-} else {
-    $j = 0;
-}
-?>
-<?php get_header();?>
-
-<a href="<?php echo get_post_type_archive_link( 'product' )  ?>"></a>
-<!-- cooding for main content -->
-<section id="main-content">
   <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -20,7 +8,7 @@ if ($args["j"]) {
 					<div class="col-md-6">
 						<div class="cont_address">
 							<address>
-								<img src="<?php $logo = get_sub_field('contact_logo','options'); echo $logo['url']  ?>" alt="logo" class="img-responsive">
+								<img src="<?php echo get_sub_field('contact_logo','options')['url']  ?>" alt="logo" class="img-responsive">
                                 <h4><?php echo get_sub_field('c_schl_name', 'options') ?></h4> <br>
 								<p> <?php echo get_sub_field('c_address', 'options') ?></p><br>
                                 
@@ -50,10 +38,4 @@ if ($args["j"]) {
 			</div>
 		</div>
     </div>
-  
-</section>
-<?php require_once get_template_directory() .'/picture-patha.php' ?>
-
-<?php  get_footer(); ?>
-
 
